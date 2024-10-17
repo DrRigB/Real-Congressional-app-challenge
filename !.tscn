@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ps51vk5y12v3"]
+
+[ext_resource type="Texture2D" uid="uid://c2h3pavq6bgpf" path="res://Exclamation point.png" id="1_8lons"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br1r7"]
+size = Vector2(8, 16)
+
+[node name="!" type="RigidBody2D"]
+z_index = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1, 4)
+texture = ExtResource("1_8lons")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+z_index = 10
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_br1r7")

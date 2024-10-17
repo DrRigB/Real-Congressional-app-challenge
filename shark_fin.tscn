@@ -19,10 +19,11 @@ size = Vector2(40.25, 33.5)
 [node name="SharkFin" type="AnimatableBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, -1)
+position = Vector2(5, 0)
 scale = Vector2(0.066875, 0.0563542)
 sprite_frames = SubResource("SpriteFrames_vihct")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.875, -5.75)
+position = Vector2(-2, -4)
 shape = SubResource("RectangleShape2D_gbcw2")
