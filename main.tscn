@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://6ikmonrlpp3d"]
+[gd_scene load_steps=29 format=3 uid="uid://6ikmonrlpp3d"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7xvh1"]
 [ext_resource type="Texture2D" uid="uid://c87ks5qxkmelp" path="res://Water16x16.png" id="1_isfyu"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://yyl4uhydkr3i" path="res://coral.tscn" id="6_luhcy"]
 [ext_resource type="Script" path="res://sea_creatures.gd" id="6_sjbyx"]
 [ext_resource type="PackedScene" uid="uid://c642g0cagdrcw" path="res://walrus.tscn" id="7_agvwr"]
-[ext_resource type="Script" path="res://coral.gd" id="8_3g0ui"]
 [ext_resource type="PackedScene" uid="uid://2jcxstno72l2" path="res://turtle.tscn" id="8_okisr"]
 [ext_resource type="PackedScene" uid="uid://b5ov27v8l5hsj" path="res://Player.tscn" id="10_4emt2"]
 
@@ -277,7 +276,7 @@ script = ExtResource("6_sjbyx")
 
 [node name="Coral" parent="Sea Creatures" instance=ExtResource("6_luhcy")]
 position = Vector2(87, -85)
-script = ExtResource("8_3g0ui")
+script = null
 
 [node name="walrus" parent="Sea Creatures" instance=ExtResource("7_agvwr")]
 position = Vector2(-121, 93)
