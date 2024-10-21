@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://2jcxstno72l2"]
+
+[ext_resource type="Texture2D" uid="uid://btkl5qu2abky" path="res://Turtle-1.png.png" id="1_yqyvh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbw2g"]
+size = Vector2(37, 53)
+
+[node name="turtle" type="RigidBody2D"]
+z_index = 5
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.053079, 0.0606618)
+texture = ExtResource("1_yqyvh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_sbw2g")

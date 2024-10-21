@@ -1,10 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://6ikmonrlpp3d"]
+[gd_scene load_steps=30 format=3 uid="uid://6ikmonrlpp3d"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7xvh1"]
 [ext_resource type="Texture2D" uid="uid://c87ks5qxkmelp" path="res://Water16x16.png" id="1_isfyu"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_uecc5"]
 [ext_resource type="PackedScene" uid="uid://df1jt3a32xaxm" path="res://shark_fin.tscn" id="4_hh8d5"]
 [ext_resource type="PackedScene" uid="uid://iqmxxnx201cc" path="res://fishy.tscn" id="5_w0puh"]
+[ext_resource type="PackedScene" uid="uid://yyl4uhydkr3i" path="res://coral.tscn" id="6_luhcy"]
+[ext_resource type="Script" path="res://sea_creatures.gd" id="6_sjbyx"]
+[ext_resource type="PackedScene" uid="uid://c642g0cagdrcw" path="res://walrus.tscn" id="7_agvwr"]
+[ext_resource type="Script" path="res://coral.gd" id="8_3g0ui"]
+[ext_resource type="PackedScene" uid="uid://2jcxstno72l2" path="res://turtle.tscn" id="8_okisr"]
+[ext_resource type="PackedScene" uid="uid://b5ov27v8l5hsj" path="res://Player.tscn" id="10_4emt2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd33o"]
 texture = ExtResource("1_isfyu")
@@ -162,6 +168,21 @@ _data = {
 "shark_fin": SubResource("Animation_1g2as")
 }
 
+[sub_resource type="Animation" id="Animation_tqrg0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(220, 31)]
+}
+
 [sub_resource type="Animation" id="Animation_sr1bg"]
 resource_name = "swim"
 length = 2.0
@@ -176,21 +197,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(220, 31), Vector2(-266, 22)]
-}
-
-[sub_resource type="Animation" id="Animation_tqrg0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(220, 31)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pfill"]
@@ -265,6 +271,22 @@ position = Vector2(220, 31)
 libraries = {
 "": SubResource("AnimationLibrary_pfill")
 }
+
+[node name="Sea Creatures" type="Node" parent="."]
+script = ExtResource("6_sjbyx")
+
+[node name="Coral" parent="Sea Creatures" instance=ExtResource("6_luhcy")]
+position = Vector2(87, -85)
+script = ExtResource("8_3g0ui")
+
+[node name="walrus" parent="Sea Creatures" instance=ExtResource("7_agvwr")]
+position = Vector2(-121, 93)
+
+[node name="turtle" parent="Sea Creatures" instance=ExtResource("8_okisr")]
+position = Vector2(132, 107)
+
+[node name="player" parent="." instance=ExtResource("10_4emt2")]
+position = Vector2(-8, 3)
 
 [connection signal="timeout" from="fishy timer" to="." method="_on_fishy_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

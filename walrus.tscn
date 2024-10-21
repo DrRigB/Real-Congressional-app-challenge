@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c642g0cagdrcw"]
+
+[ext_resource type="Texture2D" uid="uid://88xiaugefnol" path="res://walrus-1.png.png" id="1_3de4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urwcw"]
+size = Vector2(56, 35)
+
+[node name="walrus" type="RigidBody2D"]
+z_index = 5
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 0)
+scale = Vector2(0.0744782, 0.0699715)
+texture = ExtResource("1_3de4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -16)
+shape = SubResource("RectangleShape2D_urwcw")

@@ -1,18 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://yyl4uhydkr3i"]
+[gd_scene load_steps=4 format=3 uid="uid://yyl4uhydkr3i"]
 
 [ext_resource type="Texture2D" uid="uid://cb4murn7vfir7" path="res://Coral-1.png (1).png" id="1_n5jkn"]
+[ext_resource type="Script" path="res://coral.gd" id="1_pwv3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5g08"]
-size = Vector2(65, 60)
+size = Vector2(37, 34)
 
 [node name="Coral" type="RigidBody2D"]
 z_index = 5
+gravity_scale = 0.0
+script = ExtResource("1_pwv3e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, -14)
-scale = Vector2(0.20818, 0.179228)
+position = Vector2(0, -8)
+scale = Vector2(0.124311, 0.102482)
 texture = ExtResource("1_n5jkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -4)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_o5g08")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
